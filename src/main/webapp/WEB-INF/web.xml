@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
-         version="5.0">
-<!-- Controller 등록
-  		@WebServlet => 없는 경우 : web.xml
-  		  => Spring : web.xml
-  		  => 톰캣이 읽는 파일
-  		  => Controller 등록
-  		  => 에러 처리
-  		  => 한글 변환
-   -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name>JSPLastProject</display-name>
-
-  <!-- DispatcherServlet 등록 -->
+  <!-- Controller 등록 
+       @WebServlet => 없는 경우 : web.xml 
+        => Spring : web.xml
+        => 톰캣이 읽는 파일 
+        => Controller 등록 
+        => 에러처리 
+        => 한글 변환 => 10이상에서는 자동 처리 
+   -->
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>com.sist.controller.DispatcherServlet</servlet-class>
   </servlet>
-
-  <!-- URL 매핑 -->
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-
-  <!-- 기본 welcome 파일 설정 -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -36,5 +27,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.xhtml</welcome-file>
   </welcome-file-list>
-
 </web-app>
